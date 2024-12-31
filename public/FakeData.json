@@ -1,0 +1,93 @@
+[
+    {
+      "serviceName": "Plumbing Repairs",
+      "serviceImage": "https://i.ibb.co.com/Sdj7N6C/Can-A-Handyman-Do-Plumbing.jpg",
+      "description": "Fixing leaks, unclogging drains, and other plumbing issues.",
+      "price": 50,
+      "serviceArea": "Dhaka",
+      "providerName": "John Doe",
+      "providerImage": "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp",
+      "providerEmail": "john.doe@example.com"
+    },
+    {
+      "serviceName": "Electrical Fixes",
+      "serviceImage": "https://i.ibb.co.com/cCpVV68/Sanborns-Electrical-Repair-1.webp",
+      "description": "Expert electrical repairs for your home or office.",
+      "price": 60,
+      "serviceArea": "Comilla",
+      "providerName": "Jane Smith",
+      "providerImage": "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp",
+      "providerEmail": "jane.smith@example.com"
+    },
+    {
+      "serviceName": "Roof Leak Fixing",
+      "serviceImage": "https://i.ibb.co.com/BP2DRp7/roof-repair-1-700x540-1.jpg",
+      "description": "Patch up leaks and protect your home from water damage.",
+      "price": 120,
+      "serviceArea": "Dhaka",
+      "providerName": "Ahmed Khan",
+      "providerImage": "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp",
+      "providerEmail": "ahmed.khan@example.com"
+    },
+    {
+      "serviceName": "HVAC Maintenance",
+      "serviceImage": "https://i.ibb.co.com/LtqqrVD/Is-Regular-Commercial-HVAC-Maintenance-Necessary-1.jpg",
+      "description": "Keep your heating and cooling systems in top shape.",
+      "price": 100,
+      "serviceArea": "Chittagong",
+      "providerName": "Maria Lee",
+      "providerImage": "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp",
+      "providerEmail": "maria.lee@example.com"
+    },
+    {
+      "serviceName": "Pest Control Services",
+      "serviceImage": "https://i.ibb.co.com/sFm378n/warehouse-pest-control-treatment-service-1.jpg",
+      "description": "Get rid of pests with our professional services.",
+      "price": 80,
+      "serviceArea": "Sylhet",
+      "providerName": "Rahim Ullah",
+      "providerImage": "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp",
+      "providerEmail": "rahim.ullah@example.com"
+    },
+    {
+      "serviceName": "Flooring Repairs",
+      "serviceImage": "https://i.ibb.co.com/5YXpvny/laminate-floor-installation.jpg",
+      "description": "Repair damaged tiles, wood, or carpet flooring.",
+      "price": 150,
+      "serviceArea": "Rajshahi",
+      "providerName": "Sophia Brown",
+      "providerImage": "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp",
+      "providerEmail": "sophia.brown@example.com"
+    },
+    {
+      "serviceName": "Furniture Assembly",
+      "serviceImage": "https://i.ibb.co.com/TYyJSR8/furniture-assembly-professionals.webp",
+      "description": "Professional assembly of your new furniture.",
+      "price": 30,
+      "serviceArea": "Barisal",
+      "providerName": "Emily Green",
+      "providerImage": "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp",
+      "providerEmail": "emily.green@example.com"
+    },
+    {
+      "serviceName": "Window Repairs",
+      "serviceImage": "https://i.ibb.co.com/n0vbx8M/repair-windows-1000x665-webp-pagespeed-ce-Yfdm-Gu8-Mq-A.webp",
+      "description": "Fix broken windows or replace damaged panes.",
+      "price": 70,
+      "serviceArea": "Khulna",
+      "providerName": "Daniel Kim",
+      "providerImage": "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp",
+      "providerEmail": "daniel.kim@example.com"
+    },
+    {
+      "serviceName": "Garage Door Repairs",
+      "serviceImage": "https://i.ibb.co.com/gyLFNr9/Tips-to-Avoid-Costly-Garage-Door-Repair-11zon-scaled-1.jpg",
+      "description": "Repair stuck or damaged garage doors efficiently.",
+      "price": 90,
+      "serviceArea": "Dhaka",
+      "providerName": "Lily Carter",
+      "providerImage": "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp",
+      "providerEmail": "lily.carter@example.com"
+    }
+  ]
+  

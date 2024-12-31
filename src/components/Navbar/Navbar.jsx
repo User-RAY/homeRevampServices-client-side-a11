@@ -5,23 +5,23 @@ const Navbar = () => {
 
     // links if not logged in
     const links1 = <>
-                    <li><a>Home</a></li>
-                    <li><a>Services</a></li>
-                    <li><a>Log-in</a></li>
+                    <li><Link to='/'>Home</Link></li>
+                    <li><Link to='/all'>Services</Link></li>
+                    <li><Link>Log-in</Link></li>
                   </>
 
     // links if logged in
     const links2 = <>
-                    <li><a>Home</a></li>
-                    <li><a>Services</a></li>
+                    <li><Link to='/'>Home</Link></li>
+                    <li><Link to='/all'>Services</Link></li>
                     <li>
                     <details>
                     <summary>Dashboard</summary>
                     <ul className="p-2 w-40 z-50">
-                        <li><a>Add Service</a></li>
-                        <li><a>Manage Service</a></li>
-                        <li><a>Booked-Services</a></li>
-                        <li><a>Service-To-Do</a></li>
+                        <li><Link>Add Service</Link></li>
+                        <li><Link>Manage Service</Link></li>
+                        <li><Link>Booked-Services</Link></li>
+                        <li><Link>Service-To-Do</Link></li>
                     </ul>
                     </details>
                     </li>
