@@ -13,7 +13,7 @@ const Started = () => {
                 <div className="flex flex-col md:flex-row justify-center items-center">
                     <div className="flex flex-col justify-center items-center m-6 w-1/3 text-2xl">
                         <TfiWrite className="text-3xl"/>
-                        <h2 className="md:w-1/2 text-center my-4">Step 1: Sign Up</h2>
+                        <h2 className="md:w-1/2 text-center my-4">Step 1: Sign Up or Login</h2>
                     </div>
 
                     <div className="flex flex-col justify-center items-center m-6 w-1/3 text-2xl">

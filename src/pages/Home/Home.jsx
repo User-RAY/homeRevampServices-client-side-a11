@@ -3,6 +3,7 @@ import Choose from "../../components/Choose/Choose";
 import FAQ from "../../components/FAQ/FAQ";
 import Popular from "../../components/Popular/Popular";
 import Started from "../../components/Started/Started";
+import Statistics from "../../components/Statistics/Statistics";
 
 
 const Home = () => {
@@ -29,6 +30,11 @@ const Home = () => {
             <div className="mt-14 mb-6 w-11/12 mx-auto">
                 <h1 className="text-5xl my-20 font-bold text-center">Got Questions? We&apos;ve Got Answers!</h1>
                 <FAQ></FAQ>
+            </div>
+
+            <div className="mt-14 mb-6 w-11/12 mx-auto">
+                <h1 className="text-5xl my-20 font-bold text-center">Our Achievements</h1>
+                <Statistics></Statistics>
             </div>
 
         </div>
