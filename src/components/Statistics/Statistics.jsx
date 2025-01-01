@@ -4,7 +4,7 @@ const Statistics = () => {
     return (
         <div className="flex justify-center items-center">
 
-            <div className="stats shadow">
+            <div className="stats stats-vertical lg:stats-horizontal shadow">
                 <div className="stat">
                     <div className="stat-figure text-secondary">
                     <svg

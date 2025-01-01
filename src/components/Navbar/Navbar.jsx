@@ -1,3 +1,4 @@
+import { GiGearHammer } from "react-icons/gi";
 import { Link } from "react-router-dom";
 
 
@@ -71,7 +72,7 @@ const Navbar = () => {
                          }   
                     </ul>
                     </div>
-                    <Link to='/' className="btn btn-ghost text-xl">HomeRevamp</Link>
+                    <Link to='/' className="btn btn-ghost text-xl"><GiGearHammer className="text-3xl" />HomeRevamp</Link>
                 </div>
                 <div className="navbar-end hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">

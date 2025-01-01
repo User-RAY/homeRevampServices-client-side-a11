@@ -32,8 +32,8 @@ const Home = () => {
                 <FAQ></FAQ>
             </div>
 
-            <div className="mt-14 mb-6 w-11/12 mx-auto">
-                <h1 className="text-5xl my-20 font-bold text-center">Our Achievements</h1>
+            <div className="my-14 w-11/12 mx-auto">
+                <h1 className="text-5xl mt-20 mb-6 font-bold text-center">Our Achievements</h1>
                 <Statistics></Statistics>
             </div>
 
