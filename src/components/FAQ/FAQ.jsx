@@ -19,9 +19,16 @@ const FAQ = () => {
             </div>
             <div className="collapse collapse-plus bg-base-200">
             <input type="radio" name="my-accordion-3" />
-            <div className="collapse-title text-xl font-medium">Click to open this one and close others</div>
+            <div className="collapse-title text-xl font-medium">Can I see who has booked my services?</div>
             <div className="collapse-content">
-                <p>hello</p>
+                <p>Absolutely! Log in to your account and navigate to the <q>Service To-Do</q> section in your dashboard. Here, you can view all the bookings for your services along with their current status.</p>
+            </div>
+            </div>
+            <div className="collapse collapse-plus bg-base-200">
+            <input type="radio" name="my-accordion-3" />
+            <div className="collapse-title text-xl font-medium">Is there a way to search for specific services?</div>
+            <div className="collapse-content">
+                <p>Yes! Use the search bar on the <q>All Services</q> page to quickly find services based on their name or category.</p>
             </div>
             </div>
         </div>
