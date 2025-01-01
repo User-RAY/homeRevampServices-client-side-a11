@@ -2,7 +2,8 @@ import { Link } from "react-router-dom";
 import Cards from "../Cards/Cards";
 import { useEffect, useState } from "react";
 import { default as axios } from 'axios';
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Popular = () => {
 
@@ -13,6 +14,16 @@ const Popular = () => {
         .then(res => setCardData(res.data)
         )
     }, [])
+
+        useEffect(() => {
+            AOS.init({
+                duration: 10,    
+            });
+            
+            return () => {
+                AOS.refresh();
+            };
+            }, [])
 
 
     return (
@@ -25,7 +36,7 @@ const Popular = () => {
             
             
             </div>
-            <div className="text-center my-20"><Link to='/all' className="btn btn-info w-full md:w-1/2">Show All Services</Link></div>
+            <div className="text-center my-20"><Link to='/all' className="btn btn-info w-full md:w-1/2" data-aos="zoom-in">Show All Services</Link></div>
         </>
     );
 };

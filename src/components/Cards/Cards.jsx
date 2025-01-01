@@ -1,10 +1,24 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import AOS from 'aos';
+import 'aos/dist/aos.css';  
+import { useEffect } from 'react';
 
 const Cards = ({card = {}}) => {
 
+    useEffect(() => {
+        AOS.init({
+          duration: 2000, 
+          easing: 'ease',   
+        });
+      
+        return () => {
+          AOS.refresh();
+        };
+      }, []);
+
     return (
-        <div>
+        <div data-aos="fade-up">
 
         <div className="card bg-base-100 h-full max-w-96 shadow-xl">
             <figure>

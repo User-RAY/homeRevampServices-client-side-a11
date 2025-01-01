@@ -38,6 +38,9 @@ const Footer = () => {
                     Providing reliable Service since 2024
                     </p>
                 </aside>
+                
+                <p className="place-self-center">Copyright © {new Date().getFullYear()} - All right reserved by ACME Industries Ltd</p>
+
                 <nav className="md:place-self-center md:justify-self-end">
                     <div className="grid grid-flow-col gap-4">
                     <a href="https://x.com/" target="_blank">
