@@ -12,9 +12,9 @@ const FAQ = () => {
             </div>
             <div className="collapse collapse-plus bg-base-200">
             <input type="radio" name="my-accordion-3" />
-            <div className="collapse-title text-xl font-medium">Click to open this one and close others</div>
+            <div className="collapse-title text-xl font-medium">Can I update my booked service status?</div>
             <div className="collapse-content">
-                <p>hello</p>
+                <p>Yes! If you are the service provider, you can update the status of any service booked by your customers. Navigate to the <q>Service To-Do</q> section in your dashboard, find the relevant booking, and use the dropdown menu to change its status (e.g., Pending, Working, Completed).</p>
             </div>
             </div>
             <div className="collapse collapse-plus bg-base-200">
