@@ -19,9 +19,9 @@ const Navbar = () => {
                     <details>
                     <summary>Dashboard</summary>
                     <ul className="p-2 w-40 z-50">
-                        <li><NavLink>Add Service</NavLink></li>
+                        <li><NavLink to='/add'>Add Service</NavLink></li>
                         <li><NavLink>Manage Service</NavLink></li>
-                        <li><NavLink>Booked-Services</NavLink></li>
+                        <li><NavLink to='/book'>Booked-Services</NavLink></li>
                         <li><NavLink>Service-To-Do</NavLink></li>
                     </ul>
                     </details>

@@ -14,9 +14,9 @@ const DetailCard = ({card = {}}) => {
                 <div className="my-12 flex flex-col justify-center items-center">
                     <img src={card.providerImage} alt="" className='object-cover h-48 w-48 rounded-2xl' />
 
-                    <div className="text-xl">
+                    <div className="text-xl max-w-xs">
                         <h2 className="font-semibold my-4">Name: <span className="font-normal">{card.providerName}</span></h2>
-                        <h2 className="font-semibold">Service Area: <span className="font-normal">{card.serviceArea}</span></h2>
+                        <h2 className="font-semibold">Service Area: <span className="font-normal">{card?.serviceArea?.map(area =>area.split('_').map(word => word[0].toUpperCase()+ word.slice(1)).join(' ')+', ')}</span></h2>
                     </div>
                 </div>
             </div>

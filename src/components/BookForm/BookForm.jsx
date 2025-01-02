@@ -3,14 +3,7 @@ import Select from 'react-select'
 
 const BookForm = ({card}) => {
 
-    console.log(card);
-    
-
-    const options = [
-        { value: 'chocolate', label: 'Chocolate' },
-        { value: 'strawberry', label: 'Strawberry' },
-        { value: 'vanilla', label: 'Vanilla' }
-      ]
+    const options = card?.serviceArea?.map(area => ({ value: area, label: area.split('_').map(word => word[0].toUpperCase()+word.slice(1)).join(' ')}),);
 
     return (
         <div>
