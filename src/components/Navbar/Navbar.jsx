@@ -1,28 +1,28 @@
 import { GiGearHammer } from "react-icons/gi";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 
 const Navbar = () => {
 
     // links if not logged in
     const links1 = <>
-                    <li><Link to='/'>Home</Link></li>
-                    <li><Link to='/all'>Services</Link></li>
-                    <li><Link>Log-in</Link></li>
+                    <li><NavLink to='/'>Home</NavLink></li>
+                    <li><NavLink to='/all'>Services</NavLink></li>
+                    <li><NavLink>Log-in</NavLink></li>
                   </>
 
     // links if logged in
     const links2 = <>
-                    <li><Link to='/'>Home</Link></li>
-                    <li><Link to='/all'>Services</Link></li>
+                    <li><NavLink to='/'>Home</NavLink></li>
+                    <li><NavLink to='/all'>Services</NavLink></li>
                     <li>
                     <details>
                     <summary>Dashboard</summary>
                     <ul className="p-2 w-40 z-50">
-                        <li><Link>Add Service</Link></li>
-                        <li><Link>Manage Service</Link></li>
-                        <li><Link>Booked-Services</Link></li>
-                        <li><Link>Service-To-Do</Link></li>
+                        <li><NavLink>Add Service</NavLink></li>
+                        <li><NavLink>Manage Service</NavLink></li>
+                        <li><NavLink>Booked-Services</NavLink></li>
+                        <li><NavLink>Service-To-Do</NavLink></li>
                     </ul>
                     </details>
                     </li>
@@ -72,7 +72,7 @@ const Navbar = () => {
                          }   
                     </ul>
                     </div>
-                    <Link to='/' className="btn btn-ghost text-xl"><GiGearHammer className="text-3xl" /> <h1 className="hidden md:inline">HomeRevamp</h1></Link>
+                    <NavLink to='/' className="btn btn-ghost text-xl"><GiGearHammer className="text-3xl" /> <h1 className="hidden md:inline">HomeRevamp</h1></NavLink>
                 </div>
                 <div className="navbar-end hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
