@@ -9,6 +9,7 @@ import Manage from "../pages/Manage/Manage";
 import Register from "../pages/Register/Register";
 import Login from "../pages/Login/Login";
 import ToDo from "../pages/ToDo/ToDo";
+import PrivateRoute from "./PrivateRoute";
 
   const router = createBrowserRouter([
     {
@@ -26,19 +27,19 @@ import ToDo from "../pages/ToDo/ToDo";
         },
         {
           path: "/detail",
-          element: <Detail></Detail>,
+          element: <PrivateRoute><Detail></Detail></PrivateRoute> ,
         },
         {
           path: "/add",
-          element: <AddServices></AddServices>,
+          element: <PrivateRoute><AddServices></AddServices></PrivateRoute> ,
         },
         {
           path: "/book",
-          element: <Booked></Booked>,
+          element: <PrivateRoute><Booked></Booked></PrivateRoute> ,
         },
         {
           path: "/manage",
-          element: <Manage></Manage>,
+          element: <PrivateRoute><Manage></Manage></PrivateRoute> ,
         },
         {
           path: "/register",
@@ -50,7 +51,7 @@ import ToDo from "../pages/ToDo/ToDo";
         },
         {
           path: "/todo",
-          element: <ToDo></ToDo>,
+          element: <PrivateRoute><ToDo></ToDo></PrivateRoute> ,
         },
       ],
     },
