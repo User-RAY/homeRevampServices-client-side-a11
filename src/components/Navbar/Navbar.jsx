@@ -1,17 +1,31 @@
+import { useContext } from "react";
 import { GiGearHammer } from "react-icons/gi";
 import { NavLink } from "react-router-dom";
+import AuthContext from "../../context-providers/Auth/AuthContext";
 
 
 const Navbar = () => {
 
-    // links if not logged in
+    const {user, signout, loading} = useContext(AuthContext);
+
+    const handleLogout = () => {
+        signout()
+        .then(() => {
+            
+            }).catch(() => {
+            
+            });
+    }  
+
+
+
     const links1 = <>
                     <li><NavLink to='/'>Home</NavLink></li>
                     <li><NavLink to='/all'>Services</NavLink></li>
                     <li><NavLink to='/login'>Log-in</NavLink></li>
                   </>
 
-    // links if logged in
+
     const links2 = <>
                     <li><NavLink to='/'>Home</NavLink></li>
                     <li><NavLink to='/all'>Services</NavLink></li>
@@ -39,10 +53,12 @@ const Navbar = () => {
                             <ul
                                 tabIndex={0}
                                 className="menu menu-sm dropdown-content bg-base-100 rounded-box mt-3 p-2 shadow z-50">
-                                <li><a>Logout</a></li>
+                                <li><button onClick={handleLogout}>Logout</button></li>
                             </ul>
                         </div>
-                    </>                 
+                    </>      
+                    
+              
 
     return (
         <div className="mt-8 mb-6 w-11/12 mx-auto">
@@ -68,7 +84,7 @@ const Navbar = () => {
                         tabIndex={0}
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[50] mt-3 w-52 p-2 shadow">
                          {
-                            links1
+                            loading ? <span className="loading loading-bars loading-md text-blue-500"></span> : user ? links2 : links1
                          }   
                     </ul>
                     </div>
@@ -76,14 +92,14 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
-                         {
-                            links2
-                         }
+                    {
+                            loading ? <span className="loading loading-bars loading-md text-blue-500"></span> : user ? links2 : links1
+                    } 
                     </ul>
                 </div>
                 {
-                            Profile
-                }
+                    loading ? <span className="loading loading-bars loading-md text-blue-500"></span> : user ? Profile : null
+                } 
             </div>
 
 

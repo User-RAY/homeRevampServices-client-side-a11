@@ -4,7 +4,7 @@ import BookForm from "../BookForm/BookForm";
 
 const DetailCard = ({card = {}}) => {
 
-    window.scrollTo(0, 10);
+    window.scrollTo(0, 0);
     
     return (
         <div className="w-11/12 mx-auto">

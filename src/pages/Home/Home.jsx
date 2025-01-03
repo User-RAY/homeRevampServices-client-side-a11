@@ -10,7 +10,7 @@ import 'aos/dist/aos.css';
 
 const Home = () => {
 
-    window.scrollTo(0, 10);
+    window.scrollTo(0, 0);
 
     useEffect(() => {
         AOS.init({
