@@ -98,7 +98,7 @@ const BookForm = ({card}) => {
             <div className="modal-action justify-center">
                 <form method="dialog" className="w-1/2">
                     {/* if there is a button in form, it will close the modal */}
-                    <button className="btn bg-red-500 w-full">Cancel</button>
+                    <button className="btn bg-gray-500 w-full">Cancel</button>
                 </form>
             </div>
             </div>

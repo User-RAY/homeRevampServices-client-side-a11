@@ -5,6 +5,8 @@ import AllServices from "../pages/AllServices/AllServices";
 import Detail from "../pages/Detail/Detail";
 import AddServices from "../pages/AddServices/AddServices";
 import Booked from "../pages/Booked/Booked";
+import Manage from "../pages/Manage/Manage";
+import Register from "../pages/Register/Register";
 
   const router = createBrowserRouter([
     {
@@ -31,6 +33,14 @@ import Booked from "../pages/Booked/Booked";
         {
           path: "/book",
           element: <Booked></Booked>,
+        },
+        {
+          path: "/manage",
+          element: <Manage></Manage>,
+        },
+        {
+          path: "/register",
+          element: <Register></Register>,
         },
       ],
     },

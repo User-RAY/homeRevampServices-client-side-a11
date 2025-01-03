@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';  
 import { useEffect } from 'react';
+import UpdateForm from '../UpdateForm/UpdateForm';
 
-const Cards = ({card = {}}) => {
+const Cards = ({card = {}, man = false}) => {
 
     useEffect(() => {
         AOS.init({
@@ -18,9 +19,9 @@ const Cards = ({card = {}}) => {
       }, []);
 
     return (
-        <div data-aos="fade-up">
+        <div>
 
-        <div className="card bg-base-100 h-full max-w-96 shadow-xl">
+        <div className="card bg-base-100 h-full max-w-96 shadow-xl" data-aos="fade-up">
             <figure>
                 <img
                 src={card.serviceImage}
@@ -44,10 +45,34 @@ const Cards = ({card = {}}) => {
 
                 <h2 className="font-bold">Price: {card.price}$</h2>
                 <div className="card-actions justify-end">
-                <Link to='/detail' className="btn btn-primary">View Detail</Link>
+
+                {
+                    man ? <>
+                            <button className='btn btn-primary px-6' onClick={()=>document.getElementById('my_modal_5').showModal()}>
+                                Edit
+                            </button>
+                            <button className='btn btn-error'>
+                                delete
+                            </button>
+                         </> : <Link to='/detail' className="btn btn-primary">View Detail</Link>
+                }
                 </div>
             </div>
             </div>
+
+
+
+            <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle ">
+                <div className="modal-box !max-w-none">
+                    <h3 className="font-bold text-2xl text-center">Edit your Added Service</h3>
+                    <form method="dialog">
+                        {/* if there is a button in form, it will close the modal */}
+                        <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                    </form>
+                    <UpdateForm></UpdateForm>
+                </div>
+            </dialog>
+
             
         </div>
     );
@@ -60,6 +85,7 @@ const Cards = ({card = {}}) => {
 
 Cards.propTypes = {
     card: PropTypes.object,
+    man: PropTypes.bool,
 }
 
 export default Cards;

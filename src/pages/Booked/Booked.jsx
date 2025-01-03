@@ -2,7 +2,7 @@ import Cards from "../../components/Cards/Cards";
 
 const Booked = () => {
     return (
-        <div className="my-16">
+        <div className="w-11/12 mx-auto my-16">
 
             <h1 className='text-5xl font-bold text-center my-16'>Your Booked Services</h1>
 
@@ -11,7 +11,7 @@ const Booked = () => {
             <div className="my-8">
 
 
-                <div className="grid grid-cols-1 md:grid-cols-3 place-items-center items-stretch gap-5">
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 lg:place-items-center items-stretch gap-5">
 
                 <Cards></Cards>
                 <Cards></Cards>
