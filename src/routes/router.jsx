@@ -8,6 +8,7 @@ import Booked from "../pages/Booked/Booked";
 import Manage from "../pages/Manage/Manage";
 import Register from "../pages/Register/Register";
 import Login from "../pages/Login/Login";
+import ToDo from "../pages/ToDo/ToDo";
 
   const router = createBrowserRouter([
     {
@@ -46,6 +47,10 @@ import Login from "../pages/Login/Login";
         {
           path: "/login",
           element: <Login></Login>,
+        },
+        {
+          path: "/todo",
+          element: <ToDo></ToDo>,
         },
       ],
     },

@@ -8,7 +8,7 @@ const Navbar = () => {
     const links1 = <>
                     <li><NavLink to='/'>Home</NavLink></li>
                     <li><NavLink to='/all'>Services</NavLink></li>
-                    <li><NavLink>Log-in</NavLink></li>
+                    <li><NavLink to='/login'>Log-in</NavLink></li>
                   </>
 
     // links if logged in
@@ -22,7 +22,7 @@ const Navbar = () => {
                         <li><NavLink to='/add'>Add Service</NavLink></li>
                         <li><NavLink to='/manage'>Manage Service</NavLink></li>
                         <li><NavLink to='/book'>Booked-Services</NavLink></li>
-                        <li><NavLink>Service-To-Do</NavLink></li>
+                        <li><NavLink to='/todo'>Service-To-Do</NavLink></li>
                     </ul>
                     </details>
                     </li>
