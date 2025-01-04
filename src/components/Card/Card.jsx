@@ -27,11 +27,11 @@ const Card = ({card = {}}) => {
                     </div>
                     <h2>{card.providerName}</h2>
                 </div>
-                <h2 className="card-title">{card.serviceName}</h2>
-                <p>{card.description}</p>
+                <h2 className="card-title">Service: {card.serviceName}</h2>
+                <p>Description: {card.description}</p>
 
                 <h2 className="font-bold">Price: {card.price}$</h2>
-                <h2 className="font-bold">Area: {card.serviceArea}</h2>
+                <h2 className="font-bold">Area: {card?.serviceArea?.map(area =>area.split('_').map(word => word[0].toUpperCase()+ word.slice(1)).join(' ')+', ')}</h2>
                 <div className="card-actions justify-end">
 
                 <Link to='/detail' className="btn btn-primary">View Detail</Link>
