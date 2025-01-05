@@ -26,7 +26,7 @@ import PrivateRoute from "./PrivateRoute";
           element: <AllServices></AllServices>,
         },
         {
-          path: "/detail",
+          path: "/services/:id",
           element: <PrivateRoute><Detail></Detail></PrivateRoute> ,
         },
         {

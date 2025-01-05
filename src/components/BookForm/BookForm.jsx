@@ -16,7 +16,7 @@ const BookForm = ({card}) => {
                 <label className="label">
                     <span className="label-text">Service ID</span>
                 </label>
-                <input type="text" value="12345" className="input input-bordered" readOnly />
+                <input type="text" defaultValue={card._id} className="input input-bordered" readOnly />
                 </div>
 
                 <div className="form-control">

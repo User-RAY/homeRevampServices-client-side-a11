@@ -7,7 +7,7 @@
       "serviceArea": ["dhaka", "gazipur", "narayanganj"],
       "providerName": "John Doe",
       "providerImage": "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp",
-      "providerEmail": "john.doe@example.com"
+      "providerEmail": "joker@test.com"
   },
   {
       "serviceName": "Electrical Fixes",
@@ -17,7 +17,7 @@
       "serviceArea": ["comilla", "new_york", "seoul_city"],
       "providerName": "Jane Smith",
       "providerImage": "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp",
-      "providerEmail": "jane.smith@example.com"
+      "providerEmail": "joker@test.com"
   },
   {
       "serviceName": "Roof Leak Fixing",
@@ -27,7 +27,7 @@
       "serviceArea": ["dhaka", "chittagong", "sylhet"],
       "providerName": "Ahmed Khan",
       "providerImage": "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp",
-      "providerEmail": "ahmed.khan@example.com"
+      "providerEmail": "joker@test.com"
   },
   {
       "serviceName": "HVAC Maintenance",
@@ -37,7 +37,7 @@
       "serviceArea": ["chittagong", "rajshahi", "barisal"],
       "providerName": "Maria Lee",
       "providerImage": "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp",
-      "providerEmail": "maria.lee@example.com"
+      "providerEmail": "joker@test.com"
   },
   {
       "serviceName": "Pest Control Services",
@@ -47,7 +47,7 @@
       "serviceArea": ["sylhet", "feni", "noakhali"],
       "providerName": "Rahim Ullah",
       "providerImage": "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp",
-      "providerEmail": "rahim.ullah@example.com"
+      "providerEmail": "joker@test.com"
   },
   {
       "serviceName": "Flooring Repairs",
@@ -57,7 +57,7 @@
       "serviceArea": ["rajshahi", "dinajpur", "khulna"],
       "providerName": "Sophia Brown",
       "providerImage": "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp",
-      "providerEmail": "sophia.brown@example.com"
+      "providerEmail": "joker@test.com"
   },
   {
       "serviceName": "Furniture Assembly",
@@ -67,7 +67,7 @@
       "serviceArea": ["barisal", "khulna", "jashore"],
       "providerName": "Emily Green",
       "providerImage": "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp",
-      "providerEmail": "emily.green@example.com"
+      "providerEmail": "joker@test.com"
   },
   {
       "serviceName": "Window Repairs",
@@ -77,7 +77,7 @@
       "serviceArea": ["khulna", "dhaka", "chittagong"],
       "providerName": "Daniel Kim",
       "providerImage": "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp",
-      "providerEmail": "daniel.kim@example.com"
+      "providerEmail": "joker@test.com"
   },
   {
       "serviceName": "Garage Door Repairs",
@@ -87,6 +87,6 @@
       "serviceArea": ["dhaka", "sylhet", "rangpur"],
       "providerName": "Lily Carter",
       "providerImage": "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp",
-      "providerEmail": "lily.carter@example.com"
+      "providerEmail": "joker@test.com"
   }
 ]

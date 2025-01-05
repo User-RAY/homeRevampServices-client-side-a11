@@ -34,7 +34,7 @@ const Card = ({card = {}}) => {
                 <h2 className="font-bold">Area: {card?.serviceArea?.map(area =>area.split('_').map(word => word[0].toUpperCase()+ word.slice(1)).join(' ')+', ')}</h2>
                 <div className="card-actions justify-end">
 
-                <Link to='/detail' className="btn btn-primary">View Detail</Link>
+                <Link to={`/services/${card._id}`} className="btn btn-primary">View Detail</Link>
                 </div>
             </div>
             </div>

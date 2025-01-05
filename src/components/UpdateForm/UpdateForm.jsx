@@ -1,8 +1,13 @@
+import PropTypes from 'prop-types';
+
 import Select from 'react-select'
 
 
 
-const UpdateForm = () => {
+
+const UpdateForm = ({handleUpdate, handleSelect, selectedOptions}) => {
+
+
 
     const options = [
         { value: 'new_york', label: 'New York' },
@@ -18,25 +23,29 @@ const UpdateForm = () => {
       ];
 
 
+
+
+
+
     return (
         <div>
 
             <div className="card bg-base-100 w-4/5 lg:w-3/4 mx-auto">
-                <form className="card-body p-0">
+                <form className="card-body p-0" onSubmit={handleUpdate}>
                     
 
                     <div className="form-control">
                     <label className="label">
                         <span className="label-text">Service Name</span>
                     </label>
-                    <input type="text"  className="input input-bordered" required/>
+                    <input type="text" name='name'  className="input input-bordered" required/>
                     </div>
 
                     <div className="form-control">
                     <label className="label">
                         <span className="label-text">Service Image</span>
                     </label>
-                    <input type="url"  className="input input-bordered" required/>
+                    <input type="url" name='img' className="input input-bordered" required/>
                     </div>
 
 
@@ -44,7 +53,7 @@ const UpdateForm = () => {
                     <label className="label">
                         <span className="label-text">Description</span>
                     </label>
-                    <input type="text"  className="input input-bordered" required/>
+                    <input type="text" name='des' className="input input-bordered" required/>
                     </div>
 
 
@@ -53,7 +62,7 @@ const UpdateForm = () => {
                         <span className="label-text">Service Area</span>
                     </label>
 
-                    <Select options={options} required />
+                    <Select options={options} name='area' isMulti value={selectedOptions} onChange={handleSelect} required />
                     </div>
 
 
@@ -61,7 +70,7 @@ const UpdateForm = () => {
                     <label className="label">
                         <span className="label-text">Price</span>
                     </label>
-                    <input type="number"  className="input input-bordered" required/>
+                    <input type="number" name='price'  className="input input-bordered" required/>
                     </div>
 
 
@@ -75,7 +84,7 @@ const UpdateForm = () => {
                 <div className="modal-action justify-center">
                     <form method="dialog" className="w-1/2">
                         {/* if there is a button in form, it will close the modal */}
-                        <button className="btn bg-gray-500 w-full">Cancel</button>
+                        <button className="btn bg-gray-500 w-full" id='close'>Cancel</button>
                     </form>
                 </div>
             </div>
@@ -83,5 +92,12 @@ const UpdateForm = () => {
         </div>
     );
 };
+
+UpdateForm.propTypes = {
+    handleUpdate: PropTypes.func,
+    handleSelect: PropTypes.func,
+    selectedOptions: PropTypes.array,
+}
+
 
 export default UpdateForm;

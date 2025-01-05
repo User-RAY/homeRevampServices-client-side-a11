@@ -59,7 +59,7 @@ const DetailCard = ({card = {}}) => {
 
             <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle ">
                 <div className="modal-box !max-w-none">
-                    <h3 className="font-bold text-2xl text-center">Confirm Your Service Booking (Edit Date & Area)</h3>
+                    <h3 className="font-bold text-2xl text-center">Confirm Your Service Booking (Input Service Date & Area)</h3>
                     <form method="dialog">
                         {/* if there is a button in form, it will close the modal */}
                         <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
