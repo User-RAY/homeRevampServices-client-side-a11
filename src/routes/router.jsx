@@ -10,6 +10,7 @@ import Register from "../pages/Register/Register";
 import Login from "../pages/Login/Login";
 import ToDo from "../pages/ToDo/ToDo";
 import PrivateRoute from "./PrivateRoute";
+import UpdateForm from "../components/UpdateForm/UpdateForm";
 
   const router = createBrowserRouter([
     {
@@ -40,6 +41,10 @@ import PrivateRoute from "./PrivateRoute";
         {
           path: "/manage",
           element: <PrivateRoute><Manage></Manage></PrivateRoute> ,
+        },
+        {
+          path: "/update/:id",
+          element: <PrivateRoute><UpdateForm></UpdateForm></PrivateRoute> ,
         },
         {
           path: "/register",

@@ -1,12 +1,46 @@
+import axios from 'axios';
 import PropTypes from 'prop-types';
+import { useState } from 'react';
+import { NavLink, useParams } from 'react-router-dom';
 
 import Select from 'react-select'
+import Swal from 'sweetalert2';
 
 
 
 
-const UpdateForm = ({handleUpdate, handleSelect, selectedOptions}) => {
+const UpdateForm = () => {
 
+        // const [CardData, setCardData] = useState({});
+
+        const {id} = useParams();
+
+    
+        
+        const [selectedOptions, setSelectedOptions] = useState([]);
+
+        // useEffect(()=> {
+        //     setCardData({});
+        //     setCardData(selectedCard);
+        // }, [selectedCard])
+
+        // const handleInputChange = (e) => {
+        //     const name= e.target.name;
+        //     const value= e.target.value;       
+        //     const updatedField = {[name]: value}
+        //     console.log(updatedField);
+            
+        //     setCardData((prevData) => ({
+        //         ...prevData,
+        //         [name]: value,  
+        //     }));
+            
+        // };
+
+
+        const handleSelect = (select) => {
+            setSelectedOptions(select);
+          }
 
 
     const options = [
@@ -24,28 +58,63 @@ const UpdateForm = ({handleUpdate, handleSelect, selectedOptions}) => {
 
 
 
+    const handleUpdate = (e) => {
+        e.preventDefault();
+
+
+        const updateData = {
+            serviceName: e.target.serviceName.value,
+            serviceImage: e.target.serviceImage.value,
+            description: e.target.description.value,
+            serviceArea: selectedOptions.map(option => option.value),
+            price: e.target.price.value,
+        }
+
+
+        const btn = document.getElementById('close');
+        
+        axios.patch(`http://localhost:3000/update/${id}`, updateData)
+        .then(res => {
+            if(res.data.modifiedCount){
+                e.target.reset();
+                btn.click();
+                Swal.fire({
+                    title: "Congrats",
+                    text: "Your Sevice is Updated",
+                    icon: "success"
+                });
+                setSelectedOptions([]); 
+        }
+
+        
+    })
+
+    }
+
+
 
 
 
     return (
-        <div>
+        <div className='mb-24'>
 
             <div className="card bg-base-100 w-4/5 lg:w-3/4 mx-auto">
                 <form className="card-body p-0" onSubmit={handleUpdate}>
                     
+                {/* <input type="text" name='id' value={selectedCard?._id || ''} readOnly className="input input-bordered" required/> */}
 
                     <div className="form-control">
                     <label className="label">
                         <span className="label-text">Service Name</span>
                     </label>
-                    <input type="text" name='name'  className="input input-bordered" required/>
+                    <input type="text" name='serviceName'   className="input input-bordered" required/>
                     </div>
 
                     <div className="form-control">
                     <label className="label">
                         <span className="label-text">Service Image</span>
                     </label>
-                    <input type="url" name='img' className="input input-bordered" required/>
+                    <input type="url" name='serviceImage'  className="input input-bordered" required/>
                     </div>
 
 
@@ -53,7 +122,7 @@ const UpdateForm = ({handleUpdate, handleSelect, selectedOptions}) => {
                     <label className="label">
                         <span className="label-text">Description</span>
                     </label>
-                    <input type="text" name='des' className="input input-bordered" required/>
+                    <input type="text" name='description'   className="input input-bordered" required/>
                     </div>
 
 
@@ -70,7 +139,7 @@ const UpdateForm = ({handleUpdate, handleSelect, selectedOptions}) => {
                     <label className="label">
                         <span className="label-text">Price</span>
                     </label>
-                    <input type="number" name='price'  className="input input-bordered" required/>
+                    <input type="number" name='price' className="input input-bordered" required/>
                     </div>
 
 
@@ -80,13 +149,8 @@ const UpdateForm = ({handleUpdate, handleSelect, selectedOptions}) => {
                     
                 </form>
 
-                
-                <div className="modal-action justify-center">
-                    <form method="dialog" className="w-1/2">
-                        {/* if there is a button in form, it will close the modal */}
-                        <button className="btn bg-gray-500 w-full" id='close'>Cancel</button>
-                    </form>
-                </div>
+                <NavLink to='/manage' className="btn bg-gray-500 w-1/2 mx-auto my-9" id='close'>Cancel</NavLink>
+
             </div>
             
         </div>
@@ -97,6 +161,7 @@ UpdateForm.propTypes = {
     handleUpdate: PropTypes.func,
     handleSelect: PropTypes.func,
     selectedOptions: PropTypes.array,
+    selectedCard: PropTypes.object,
 }
 
 

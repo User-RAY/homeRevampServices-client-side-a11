@@ -3,16 +3,14 @@ import { Link } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';  
 import { useEffect, useState } from 'react';
-import UpdateForm from '../UpdateForm/UpdateForm';
-import axios from 'axios';
-import Swal from 'sweetalert2';
+
 
 
 const Cards = ({card = {}, man = false, handleDelete}) => {
 
-    const [selectedOptions, setSelectedOptions] = useState([]);
 
-    const [CardData, setCardData] = useState({});
+    const [CardData, setCardData] = useState(card);
+
 
     useEffect(()=> {
         setCardData(card);
@@ -29,53 +27,9 @@ const Cards = ({card = {}, man = false, handleDelete}) => {
         };
       }, []);
 
-      const handleSelect = (select) => {
-        setSelectedOptions(select);
-      }
 
 
-      const handleUpdate = (e) => {
-        e.preventDefault();
 
-        const updateData = {
-            serviceName: e.target.name.value,
-            serviceImage: e.target.img.value,
-            description: e.target.des.value,
-            serviceArea: selectedOptions.map(option => option.value),
-            price: e.target.price.value,
-        }
-
-        const stateUpdate = {
-            serviceName: e.target.name.value,
-            serviceImage: e.target.img.value,
-            description: e.target.des.value,
-            serviceArea: selectedOptions.map(option => option.value),
-            price: e.target.price.value,
-            providerName: CardData.providerName,
-            providerImage: CardData.providerImage,
-            providerEmail: CardData.providerEmail,
-        }
-
-        const btn = document.getElementById('close');
-        
-        axios.patch(`http://localhost:3000/update/${card._id}`, updateData)
-        .then(res => {
-            if(res.data.modifiedCount){
-                e.target.reset();
-                btn.click();
-                Swal.fire({
-                    title: "Congrats",
-                    text: "Your Sevice is Updated",
-                    icon: "success"
-                  });
-                setSelectedOptions([]); 
-                setCardData(stateUpdate);
-        }
-
-        
-    })
-
-      }
 
 
 
@@ -89,7 +43,7 @@ const Cards = ({card = {}, man = false, handleDelete}) => {
                 alt="photo" 
                 className='object-cover h-56 w-96'/>
             </figure>
-            <div className="card-body">
+            <div className="card-body max-w-96">
                 <div className="flex items-center">
                     <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                             <div className="w-9 rounded-full">
@@ -109,9 +63,11 @@ const Cards = ({card = {}, man = false, handleDelete}) => {
 
                 {
                     man ? <>
-                            <button className='btn btn-primary px-6' onClick={()=>document.getElementById('my_modal_5').showModal()}>
-                                Edit
-                            </button>
+                            <Link to={`/update/${CardData._id}`}>
+                                <button className='btn btn-primary px-6'>
+                                    Edit
+                                </button>
+                            </Link>
                             <button className='btn btn-error' onClick={() => handleDelete(card._id)}>
                                 delete
                             </button>
@@ -130,7 +86,7 @@ const Cards = ({card = {}, man = false, handleDelete}) => {
                         {/* if there is a button in form, it will close the modal */}
                         <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
                     </form>
-                    <UpdateForm handleUpdate={handleUpdate} handleSelect={handleSelect} selectedOptions={selectedOptions}></UpdateForm>
+
                 </div>
             </dialog>
 
