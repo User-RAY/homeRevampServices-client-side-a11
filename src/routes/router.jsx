@@ -11,6 +11,7 @@ import Login from "../pages/Login/Login";
 import ToDo from "../pages/ToDo/ToDo";
 import PrivateRoute from "./PrivateRoute";
 import UpdateForm from "../components/UpdateForm/UpdateForm";
+import BookDetail from "../pages/BookDetail/BookDetail";
 
   const router = createBrowserRouter([
     {
@@ -37,6 +38,10 @@ import UpdateForm from "../components/UpdateForm/UpdateForm";
         {
           path: "/book",
           element: <PrivateRoute><Booked></Booked></PrivateRoute> ,
+        },
+        {
+          path: "/book/:id",
+          element: <PrivateRoute><BookDetail></BookDetail></PrivateRoute> ,
         },
         {
           path: "/manage",

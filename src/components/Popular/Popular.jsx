@@ -31,7 +31,7 @@ const Popular = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 place-items-center items-stretch gap-5">
             {/* need to edit keys */}
             {
-                CardData.map((card,index) => <Cards key={index} card={card}></Cards>)
+                CardData.map((card) => <Cards key={card._id} card={card}></Cards>)
             }
             
             

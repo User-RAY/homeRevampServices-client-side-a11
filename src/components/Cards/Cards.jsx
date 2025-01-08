@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 
 
 
-const Cards = ({card = {}, man = false, handleDelete}) => {
+const Cards = ({card = {}, man = false, handleDelete, book = false}) => {
 
 
     const [CardData, setCardData] = useState(card);
@@ -45,14 +45,15 @@ const Cards = ({card = {}, man = false, handleDelete}) => {
             </figure>
             <div className="card-body max-w-96">
                 <div className="flex items-center">
-                    <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                            <div className="w-9 rounded-full">
-                                <img
-                                    alt="provider image"
-                                    src={CardData.providerImage}
-                                     />
-                            </div>
-                    </div>
+                    {  !book ? <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                                <div className="w-9 rounded-full">
+                                    <img
+                                        alt="provider image"
+                                        src={CardData.providerImage}
+                                        />
+                                </div>
+                        </div> : <h2 className='font-medium mr-2'>Provider Name: </h2>
+                    }
                     <h2>{CardData.providerName}</h2>
                 </div>
                 <h2 className="card-title">{CardData.serviceName}</h2>
@@ -71,7 +72,7 @@ const Cards = ({card = {}, man = false, handleDelete}) => {
                             <button className='btn btn-error' onClick={() => handleDelete(card._id)}>
                                 delete
                             </button>
-                         </> : <Link to={`/services/${card._id}`} className="btn btn-primary">View Detail</Link>
+                         </> : book ? <Link to={`/book/${card._id}`} className="btn btn-primary">View Detail</Link> : <Link to={`/services/${card._id}`} className="btn btn-primary">View Detail</Link>
                 }
                 </div>
             </div>
@@ -103,6 +104,7 @@ const Cards = ({card = {}, man = false, handleDelete}) => {
 Cards.propTypes = {
     card: PropTypes.object,
     man: PropTypes.bool,
+    book: PropTypes.bool,
     handleDelete: PropTypes.func,
 }
 

@@ -22,6 +22,8 @@ const BookForm = ({card}) => {
 
         e.preventDefault();
 
+        const defaultStatus = 'pending';
+
         const bookData = {
             serviceID: e.target.serviceID.value,
             serviceName: e.target.serviceName.value,
@@ -33,6 +35,7 @@ const BookForm = ({card}) => {
             userEmail: e.target.userEmail.value,
             userName: e.target.userName.value,
             bookDate: e.target.bookDate.value,
+            serviceStatus: defaultStatus,
         }
 
 
