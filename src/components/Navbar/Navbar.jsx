@@ -2,11 +2,13 @@ import { useContext } from "react";
 import { GiGearHammer } from "react-icons/gi";
 import { NavLink } from "react-router-dom";
 import AuthContext from "../../context-providers/Auth/AuthContext";
+import ThemeContext from "../../context-providers/Theme/ThemeContext";
 
 
 const Navbar = () => {
 
     const {user, signout, loading} = useContext(AuthContext);
+    const {toggleMode} = useContext(ThemeContext);
 
     const handleLogout = () => {
         signout()
@@ -32,7 +34,7 @@ const Navbar = () => {
                     <li>
                     <details>
                     <summary>Dashboard</summary>
-                    <ul className="p-2 w-40 z-50">
+                    <ul className="p-2 w-40 z-50 bg-gray-400">
                         <li><NavLink to='/add'>Add Service</NavLink></li>
                         <li><NavLink to='/manage'>Manage Service</NavLink></li>
                         <li><NavLink to='/book'>Booked-Services</NavLink></li>
@@ -61,9 +63,9 @@ const Navbar = () => {
               
 
     return (
-        <div className="mt-8 mb-6 w-11/12 mx-auto">
+        <div className="mb-6 w-11/12 mx-auto">
 
-            <div className="navbar bg-base-100 shadow-sm">
+            <div className="navbar shadow-sm">
                 <div className="navbar-start flex-1">
                     <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -82,15 +84,17 @@ const Navbar = () => {
                     </div>
                     <ul
                         tabIndex={0}
-                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[50] mt-3 w-52 p-2 shadow">
+                        className="menu menu-sm dropdown-content bg-gray-400 rounded-box z-[50] mt-3 w-52 p-2 shadow">
                          {
                             loading ? <span className="loading loading-bars loading-md text-blue-500"></span> : user ? links2 : links1
                          }   
+                        <input type="checkbox"  onClick={toggleMode} className="toggle theme-controller" />
                     </ul>
                     </div>
                     <NavLink to='/' className="btn btn-ghost text-xl"><GiGearHammer className="text-3xl" /> <h1 className="hidden md:inline">HomeRevamp</h1></NavLink>
                 </div>
                 <div className="navbar-end hidden lg:flex">
+                <input type="checkbox"  onClick={toggleMode} className="toggle theme-controller" />
                     <ul className="menu menu-horizontal px-1">
                     {
                             loading ? <span className="loading loading-bars loading-md text-blue-500"></span> : user ? links2 : links1

@@ -2,6 +2,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { useContext } from "react";
 import AuthContext from "../../context-providers/Auth/AuthContext";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
 
@@ -50,6 +51,10 @@ const Login = () => {
 
     return (
         <div>
+
+        <Helmet>
+            <title>Login | HomeRevamp</title>
+        </Helmet>
 
 <div className="min-h-screen flex flex-col justify-center items-center w-11/12 mx-auto my">
                 <h1 className="text-4xl my-4"> Login now </h1>

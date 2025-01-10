@@ -8,7 +8,7 @@ const Card = ({card = {}}) => {
     return (
         <div>
 
-        <div className="card bg-base-100 h-full w-9/12 mx-auto shadow-xl">
+        <div className="card h-full w-9/12 mx-auto shadow-xl">
             <figure>
                 <img
                 src={card.serviceImage}

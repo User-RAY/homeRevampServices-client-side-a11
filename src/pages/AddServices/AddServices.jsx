@@ -3,6 +3,7 @@ import { default as axios } from 'axios';
 import Swal from 'sweetalert2';
 import { useContext, useState } from 'react';
 import AuthContext from "../../context-providers/Auth/AuthContext";
+import { Helmet } from 'react-helmet-async';
 
 const AddServices = () => {
 
@@ -60,6 +61,10 @@ const AddServices = () => {
 
     return (
         <div className='my-14'>
+
+            <Helmet>
+                <title>AddServices | HomeRevamp</title>
+            </Helmet>
 
             <h1 className='text-5xl font-bold text-center'>Add Your Service</h1>
 

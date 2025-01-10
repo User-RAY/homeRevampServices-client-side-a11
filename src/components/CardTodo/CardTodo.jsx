@@ -1,35 +1,80 @@
+import axios from 'axios';
+import PropTypes from 'prop-types';
+import { useEffect, useState } from 'react';
 import Select from 'react-select'
+import Swal from 'sweetalert2';
 
-const CardTodo = () => {
+const CardTodo = ({card = {}}) => {
 
 
-    const options = [
+     const [selectedOptions, setSelectedOptions] = useState({})
+
+     const options = [
         { value: 'pending', label: 'Pending' },
         { value: 'working', label: 'Working' },
         { value: 'completed', label: 'Completed' },
       ];
 
+     useEffect(() => {
+        if (card.serviceStatus) {
+          const initialOption = options.find(option => option.value === card.serviceStatus);
+          setSelectedOptions(initialOption);
+        }
+      }, []);
+     
+
+
+
+      const handleSelect = (select) => {
+        setSelectedOptions(select);
+        console.log(selectedOptions);
+      }
+
+      const handleStatus = (e) => {
+        e.preventDefault();
+
+
+        const updateStatus = {
+            serviceStatus: selectedOptions.value,
+        }
+
+        
+        axios.patch(`http://localhost:3000/status/${card._id}`, updateStatus)
+        .then(res => {
+            if(res.data.modifiedCount){
+                Swal.fire({
+                    title: "Success",
+                    text: "Status is Updated",
+                    icon: "success"
+                });
+        }
+
+        
+        })
+      }
+
+
 
     return (
         <div className="w-3/4 mx-auto my-6">
 
-            <div className="card card-side flex-col md:flex-row bg-base-100 shadow-xl">
+            <div className="card card-side flex-col md:flex-row shadow-xl">
             <figure>
                 <img
-                src="https://i.ibb.co.com/cCpVV68/Sanborns-Electrical-Repair-1.webp"
+                src={card.serviceImage}
                 alt="Movie" className="object-cover h-full w-52" />
             </figure>
             <div className="card-body lg:flex-row justify-between items-center">
                 <div>
-                    <h2 className="card-title">Electrical Fixes</h2>
-                    <p>Booked by: Jane Smith</p>
-                    <p>Service Taking Date: 4 Jan 2025</p>
-                    <p>Area: Dhaka</p>
+                    <h2 className="card-title">{card.serviceName}</h2>
+                    <p>Booked by: {card.userName}</p>
+                    <p>Service Taking Date: {card.bookDate}</p>
+                    <p>Area: {card.serviceArea}</p>
                 </div>
-                <form>
+                <form onSubmit={handleStatus}>
                     <div className="card-actions grid grid-cols-1 md:grid-cols-3 items-center">
                        <div className='flex items-center justify-end col-span-2 mt-6 md:mt-0'>
-                           <p className='mr-2 flex-grow-0'>Status:</p> <Select className='w-36' options={options} defaultValue={options[0]} required  />
+                           <p className='mr-2 flex-grow-0'>Status:</p> <Select className='w-36' options={options} value={selectedOptions} onChange={handleSelect} required  />
                        </div>
                         <button className='btn btn-primary w-1/2 mt-6 md:w-auto md:mt-0'>Update Status</button>
                     </div>
@@ -41,5 +86,10 @@ const CardTodo = () => {
         </div>
     );
 };
+
+CardTodo.propTypes = {
+    card: PropTypes.object,
+
+}
 
 export default CardTodo;

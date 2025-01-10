@@ -12,12 +12,14 @@ import ToDo from "../pages/ToDo/ToDo";
 import PrivateRoute from "./PrivateRoute";
 import UpdateForm from "../components/UpdateForm/UpdateForm";
 import BookDetail from "../pages/BookDetail/BookDetail";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import { HelmetProvider } from "react-helmet-async";
 
   const router = createBrowserRouter([
     {
       path: "/",
       element: <MainLayout></MainLayout>,
-      errorElement: <div>error</div>,
+      errorElement: <HelmetProvider><ErrorPage></ErrorPage></HelmetProvider>,
       children: [
         {
           path: "/",

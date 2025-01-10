@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import Cards from "../../components/Cards/Cards";
 import AuthContext from "../../context-providers/Auth/AuthContext";
 import axios from "axios";
+import { Helmet } from "react-helmet-async";
 
 const Booked = () => {
 
@@ -13,7 +14,9 @@ const Booked = () => {
     
 
     useEffect(() => {
-        axios.get(`http://localhost:3000/booked/${user?.email}`)
+        axios.get(`http://localhost:3000/booked/${user?.email}`, {
+            withCredentials: true
+        })
         .then(res => setCardData(res.data)
         ).catch(err => {
             console.error(err);
@@ -23,6 +26,10 @@ const Booked = () => {
 
     return (
         <div className="w-11/12 mx-auto my-16">
+
+            <Helmet>
+                <title>Book | HomeRevamp</title>
+            </Helmet>
 
             <h1 className='text-5xl font-bold text-center my-16'>Your Booked Services</h1>
 

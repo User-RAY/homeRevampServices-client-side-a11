@@ -10,7 +10,7 @@ const Popular = () => {
     const [CardData, setCardData] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:3000/all')
+        axios.get('http://localhost:3000/feature')
         .then(res => setCardData(res.data)
         )
     }, [])

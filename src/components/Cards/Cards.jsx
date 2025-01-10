@@ -36,7 +36,7 @@ const Cards = ({card = {}, man = false, handleDelete, book = false}) => {
     return (
         <div>
 
-        <div className="card bg-base-100 h-full max-w-96 shadow-xl" data-aos="fade-up">
+        <div className="card h-full max-w-96 shadow-xl" data-aos="fade-up">
             <figure>
                 <img
                 src={CardData.serviceImage}

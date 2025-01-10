@@ -7,6 +7,7 @@ import Started from "../../components/Started/Started";
 import Statistics from "../../components/Statistics/Statistics";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { Helmet } from "react-helmet-async";
 
 const Home = () => {
 
@@ -25,7 +26,9 @@ const Home = () => {
 
     return (
         <div>
-
+                  <Helmet>
+                        <title>Home | HomeRevamp</title>
+                  </Helmet>
             <Banner></Banner>
 
             <div className="mt-14 mb-6 w-11/12 mx-auto">

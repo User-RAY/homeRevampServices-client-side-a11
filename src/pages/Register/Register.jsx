@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import AuthContext from "../../context-providers/Auth/AuthContext";
+import { Helmet } from "react-helmet-async";
 
 
 
@@ -54,6 +55,10 @@ const Register = () => {
 
     return (
         <div>
+
+            <Helmet>
+                <title>Register | HomeRevamp</title>
+            </Helmet>
 
 <div className="min-h-screen flex flex-col justify-center items-center w-11/12 mx-auto mb-8">
                 <h1 className="text-4xl my-4"> Register now </h1>
