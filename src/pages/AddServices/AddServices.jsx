@@ -43,7 +43,7 @@ const AddServices = () => {
             providerEmail: user.email
         }
         
-        axios.post('http://localhost:3000/add', serviceData)
+        axios.post('https://home-revamp-services-server-side-a11.vercel.app/add', serviceData)
         .then(res => {
             if(res.data.insertedId){
                 Swal.fire({

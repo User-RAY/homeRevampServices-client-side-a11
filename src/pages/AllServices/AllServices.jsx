@@ -12,7 +12,7 @@ const AllServices = () => {
     const [initialCardData, setInitialCardData] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:3000/all')
+        axios.get('https://home-revamp-services-server-side-a11.vercel.app/all')
         .then(res => {
             setInitialCardData(res.data); 
             setCardData(res.data);
@@ -26,7 +26,7 @@ const AllServices = () => {
         const search = e.target.search.value.trim();
  
         !search ? setCardData(initialCardData) 
-        : fetch(`http://localhost:3000/search/${search}`)
+        : fetch(`https://home-revamp-services-server-side-a11.vercel.app/search/${search}`)
         .then(res => res.json())
         .then(data => setCardData(data))
         .catch(() => {return []})

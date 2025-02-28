@@ -15,7 +15,7 @@ const ToDo = () => {
     
 
     useEffect(() => {
-        axios.get(`http://localhost:3000/todo/${user?.email}`, {
+        axios.get(`https://home-revamp-services-server-side-a11.vercel.app/todo/${user?.email}`, {
             withCredentials: true
         })
         .then(res => setCardData(res.data)

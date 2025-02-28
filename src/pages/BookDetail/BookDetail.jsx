@@ -11,7 +11,7 @@ const BookDetail = () => {
     const { id } = useParams();    
 
     useEffect(() => {
-        axios.get(`http://localhost:3000/book/${id}`, {
+        axios.get(`https://home-revamp-services-server-side-a11.vercel.app/book/${id}`, {
             withCredentials: true
         })
         .then(res => setCardData(res.data)

@@ -34,7 +34,8 @@ const Login = () => {
     }
 
     const handleGoogle = () => {
-
+        console.log('click');
+        
         googleLogin()
         .then(() => {
             // console.log(result);
@@ -86,7 +87,7 @@ const Login = () => {
 
                     <div className="px-4">
                         <div className="divider text-black">OR</div>
-                        <button className="btn max-w-sm w-full bg-black text-white mb-4 shadow-2xl" onSubmit={handleGoogle}> <FcGoogle className="text-xl" />Login with Google</button>
+                        <button className="btn max-w-sm w-full bg-black text-white mb-4 shadow-2xl" onClick={handleGoogle}> <FcGoogle className="text-xl" />Login with Google</button>
                     </div>
                     <h2 className="px-8 mb-4 text-center text-black ">Do not have an account? then <Link to='/register' className="text-blue-600">Register</Link></h2>
                 </div>

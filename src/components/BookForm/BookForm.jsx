@@ -42,7 +42,7 @@ const BookForm = ({card}) => {
         const btn = document.getElementById('close');
         
         
-        axios.post('http://localhost:3000/book', bookData)
+        axios.post('https://home-revamp-services-server-side-a11.vercel.app/book', bookData)
         .then(res => {
             if(res.data.insertedId){
                 e.target.reset();

@@ -12,7 +12,7 @@ const Detail = () => {
     const { id } = useParams();    
 
     useEffect(() => {
-        axios.get(`http://localhost:3000/detail/${id}`, {
+        axios.get(`https://home-revamp-services-server-side-a11.vercel.app/detail/${id}`, {
             withCredentials: true
         })
         .then(res => setCardData(res.data)

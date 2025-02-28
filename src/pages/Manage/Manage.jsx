@@ -12,7 +12,7 @@ const Manage = () => {
         const { user } = useContext(AuthContext);
 
     useEffect(() => {
-        axios.get(`http://localhost:3000/manage/${user.email}`, {
+        axios.get(`https://home-revamp-services-server-side-a11.vercel.app/manage/${user.email}`, {
             withCredentials: true
         })
         .then(res => setCardData(res.data)
@@ -32,7 +32,7 @@ const Manage = () => {
             confirmButtonText: "Yes, delete it!"
           }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete(`http://localhost:3000/manage/${id}`)
+                axios.delete(`https://home-revamp-services-server-side-a11.vercel.app/manage/${id}`)
                 .then(res => {
                     if(res.data.deletedCount){
                         setCardData(CardData.filter(p => p._id !== id))

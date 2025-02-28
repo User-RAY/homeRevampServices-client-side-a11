@@ -45,22 +45,26 @@ const AuthProvider = ({children}) => {
             if(currentUser?.email){
                 const user = { email: currentUser.email};
 
-                axios.post('http://localhost:3000/jwt', user, {
+                axios.post('https://home-revamp-services-server-side-a11.vercel.app/jwt', user, {
                     withCredentials: true
                 })
                 .then(res => {
-                    console.log(res.data)
-                    setLoading(false);
+
+                    if (res.data) {
+                        setLoading(false);
+                    }
+
                 }
                 )
 
             } else {
-                axios.post('http://localhost:3000/logout', {}, {
+                axios.post('https://home-revamp-services-server-side-a11.vercel.app/logout', {
                     withCredentials: true
                 })
                 .then(res => {
-                    console.log('logout', res.data)
-                    setLoading(false);
+                    if (res.data) {
+                        setLoading(false);
+                    }
                 }
                 )
             }

@@ -73,7 +73,7 @@ const UpdateForm = () => {
 
         const btn = document.getElementById('close');
         
-        axios.patch(`http://localhost:3000/update/${id}`, updateData)
+        axios.patch(`https://home-revamp-services-server-side-a11.vercel.app/update/${id}`, updateData)
         .then(res => {
             if(res.data.modifiedCount){
                 e.target.reset();

@@ -27,7 +27,7 @@ const CardTodo = ({card = {}}) => {
 
       const handleSelect = (select) => {
         setSelectedOptions(select);
-        console.log(selectedOptions);
+        // console.log(selectedOptions);
       }
 
       const handleStatus = (e) => {
@@ -39,7 +39,7 @@ const CardTodo = ({card = {}}) => {
         }
 
         
-        axios.patch(`http://localhost:3000/status/${card._id}`, updateStatus)
+        axios.patch(`https://home-revamp-services-server-side-a11.vercel.app/status/${card._id}`, updateStatus)
         .then(res => {
             if(res.data.modifiedCount){
                 Swal.fire({

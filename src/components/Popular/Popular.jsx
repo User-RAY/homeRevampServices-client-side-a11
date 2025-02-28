@@ -10,7 +10,7 @@ const Popular = () => {
     const [CardData, setCardData] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:3000/feature')
+        axios.get('https://home-revamp-services-server-side-a11.vercel.app/feature')
         .then(res => setCardData(res.data)
         )
     }, [])

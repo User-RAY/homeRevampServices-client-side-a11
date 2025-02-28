@@ -14,7 +14,7 @@ const Booked = () => {
     
 
     useEffect(() => {
-        axios.get(`http://localhost:3000/booked/${user?.email}`, {
+        axios.get(`https://home-revamp-services-server-side-a11.vercel.app/booked/${user?.email}`, {
             withCredentials: true
         })
         .then(res => setCardData(res.data)
