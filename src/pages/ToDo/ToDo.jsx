@@ -7,6 +7,7 @@ import { Helmet } from "react-helmet-async";
 
 const ToDo = () => {
 
+    const [load, setLoad] = useState(true);
     const [CardData, setCardData] = useState([]);
 
     const {user} = useContext(AuthContext)
@@ -18,7 +19,10 @@ const ToDo = () => {
         axios.get(`https://home-revamp-services-server-side-a11.vercel.app/todo/${user?.email}`, {
             withCredentials: true
         })
-        .then(res => setCardData(res.data)
+        .then(res => {
+            setCardData(res.data)
+            setLoad(false);
+        }
         ).catch(err => {
             console.error(err);
         });
@@ -34,7 +38,7 @@ const ToDo = () => {
             <h1 className="text-5xl font-bold text-center my-4 "> Service-TO-DO </h1>
 
             {
-                (CardData.length > 0) ? CardData.map((card) => <CardTodo key={card._id} card={card} book={true}></CardTodo>) : <h1 className=' text-4xl  text-center my-16 col-span-3'>Currently Nobody has Booked Any of your Service</h1>
+                 load ? <div className="mt-14 text-center"><span className="loading loading-bars loading-lg"></span></div> : (CardData.length > 0) ? CardData.map((card) => <CardTodo key={card._id} card={card} book={true}></CardTodo>) : <h1 className=' text-4xl  text-center my-16 col-span-3'>Currently Nobody has Booked Any of your Service</h1>
             }
             
         </div>

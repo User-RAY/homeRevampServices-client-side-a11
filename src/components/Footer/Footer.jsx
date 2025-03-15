@@ -33,13 +33,13 @@ const Footer = () => {
                     <GiGearHammer className="text-4xl" />
 
                     <p>
-                    ACME Industries Ltd.
+                    HomeRevamp Ltd.
                     <br />
                     Providing reliable Service since 2024
                     </p>
                 </aside>
                 
-                <p className="place-self-center">Copyright © {new Date().getFullYear()} - All right reserved by ACME Industries Ltd</p>
+                <p className="place-self-center">Copyright © {new Date().getFullYear()} - All right reserved by HomeRevamp Ltd</p>
 
                 <nav className="md:place-self-center md:justify-self-end">
                     <div className="grid grid-flow-col gap-4">

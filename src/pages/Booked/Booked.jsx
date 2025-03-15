@@ -6,6 +6,8 @@ import { Helmet } from "react-helmet-async";
 
 const Booked = () => {
 
+    const [load, setLoad] = useState(true);
+
     const [CardData, setCardData] = useState([]);
 
     const {user} = useContext(AuthContext)
@@ -17,7 +19,10 @@ const Booked = () => {
         axios.get(`https://home-revamp-services-server-side-a11.vercel.app/booked/${user?.email}`, {
             withCredentials: true
         })
-        .then(res => setCardData(res.data)
+        .then(res => {
+            setCardData(res.data);
+            setLoad(false);
+        }
         ).catch(err => {
             console.error(err);
         });
@@ -42,7 +47,7 @@ const Booked = () => {
 
 
                 {
-                    (CardData.length > 0) ? CardData.map((card) => <Cards key={card._id} card={card} book={true}></Cards>) : <h1 className='text-5xl font-bold text-center my-16 col-span-3'>YOU HAVE NOT BOOKED ANY SERVICES</h1>
+                     load ? <div className="text-center col-span-full"><span className="loading loading-bars loading-lg"></span></div> : (CardData.length > 0) ? CardData.map((card) => <Cards key={card._id} card={card} book={true}></Cards>) : <h1 className='text-5xl font-bold text-center my-16 col-span-3'>YOU HAVE NOT BOOKED ANY SERVICES</h1>
                 }
                 
                 

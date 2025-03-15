@@ -7,15 +7,23 @@ import { Helmet } from "react-helmet-async";
 
 const Manage = () => {
 
+        const [load, setLoad] = useState(true);
+
         const [CardData, setCardData] = useState([]);
 
+
         const { user } = useContext(AuthContext);
+
+        
 
     useEffect(() => {
         axios.get(`https://home-revamp-services-server-side-a11.vercel.app/manage/${user.email}`, {
             withCredentials: true
         })
-        .then(res => setCardData(res.data)
+        .then(res => {
+            setCardData(res.data)
+            setLoad(false);
+        }
         )
     }, [user])
 
@@ -61,7 +69,7 @@ const Manage = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 lg:place-items-center items-stretch">
 
             {
-                CardData.map((card) => <Cards key={card._id} man={true} card={card} handleDelete={handleDelete}></Cards>)
+                 load ? <div className="text-center col-span-full"><span className="loading loading-bars loading-lg"></span></div> : CardData.map((card) => <Cards key={card._id} man={true} card={card} handleDelete={handleDelete}></Cards>)
             }
             </div>
         </div>

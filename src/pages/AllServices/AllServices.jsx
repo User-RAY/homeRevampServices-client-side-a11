@@ -10,12 +10,14 @@ const AllServices = () => {
 
     const [CardData, setCardData] = useState([]);
     const [initialCardData, setInitialCardData] = useState([]);
+    const [load, setLoad] = useState(true);
 
     useEffect(() => {
         axios.get('https://home-revamp-services-server-side-a11.vercel.app/all')
         .then(res => {
             setInitialCardData(res.data); 
             setCardData(res.data);
+            setLoad(false)
         })
         
     }, [])
@@ -59,7 +61,7 @@ const AllServices = () => {
             </div>
             <div className="flex flex-col gap-y-6">
                 {
-                   (CardData.length >0) ? CardData.map((card,index) => <Card key={index} card={card}></Card>) :
+                   load ? <div className="text-center"><span className="loading loading-bars loading-lg"></span></div> : (CardData.length >0) ? CardData.map((card,index) => <Card key={index} card={card}></Card>) :
                    <h1 className="text-4xl text-center">No Service Found</h1>
                 }
             </div>
