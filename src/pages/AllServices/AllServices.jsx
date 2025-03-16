@@ -39,7 +39,7 @@ const AllServices = () => {
             <Helmet>
                 <title>AllServices | HomeRevamp</title>
             </Helmet>
-            <h1 className="text-5xl my-20 font-bold text-center">All Available Services</h1>
+            <h1 className="text-5xl mb-20 mt-14 font-bold text-center">All Available Services</h1>
             <div className="w-1/4 mx-auto mb-12">
 
             <form onSubmit={handleSearch} className="flex flex-col md:flex-row justify-center items-center text-black">

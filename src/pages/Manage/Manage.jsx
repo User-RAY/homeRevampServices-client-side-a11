@@ -65,7 +65,7 @@ const Manage = () => {
             <Helmet>
                 <title>Manage Services | HomeRevamp</title>
             </Helmet>
-            <h1 className='text-5xl font-bold text-center my-28'>Manage Your Added Service</h1>
+            <h1 className='text-5xl font-bold text-center mt-14 mb-28'>Manage Your Added Service</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 lg:place-items-center items-stretch">
 
             {

@@ -15,7 +15,9 @@ const MainLayout = () => {
 
                 </div>
                 <Navbar></Navbar>
-                <Outlet></Outlet>
+                <div className="min-h-[80vh]">
+                    <Outlet></Outlet>
+                </div>
                 <Footer></Footer>
             </div>
             </HelmetProvider>

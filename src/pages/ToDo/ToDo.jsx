@@ -35,7 +35,7 @@ const ToDo = () => {
                 <title>Service-TO-DO | HomeRevamp</title>
             </Helmet>
 
-            <h1 className="text-5xl font-bold text-center my-4 "> Service-TO-DO </h1>
+            <h1 className="text-5xl font-bold text-center my-14 "> Service-To-Do </h1>
 
             {
                  load ? <div className="mt-14 text-center"><span className="loading loading-bars loading-lg"></span></div> : (CardData.length > 0) ? CardData.map((card) => <CardTodo key={card._id} card={card} book={true}></CardTodo>) : <h1 className=' text-4xl  text-center my-16 col-span-3'>Currently Nobody has Booked Any of your Service</h1>
