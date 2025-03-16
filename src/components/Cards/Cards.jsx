@@ -2,7 +2,8 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';  
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import ThemeContext from '../../context-providers/Theme/ThemeContext';
 
 
 
@@ -10,7 +11,7 @@ const Cards = ({card = {}, man = false, handleDelete, book = false}) => {
 
 
     const [CardData, setCardData] = useState(card);
-
+    const {theme} = useContext(ThemeContext);
 
     useEffect(()=> {
         setCardData(card);
@@ -80,10 +81,12 @@ const Cards = ({card = {}, man = false, handleDelete, book = false}) => {
 
 
 
-            <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle ">
-                <div className="modal-box !max-w-none">
-                    <h3 className="font-bold text-2xl text-center">Edit your Added Service</h3>
-                    <form method="dialog">
+            <dialog id="my_modal_5" className={`modal modal-bottom sm:modal-middle ${theme ? 'text-black bg-base-100 ' : 'text-black bg-[#0B192C]'} `}>
+                <div className={`modal-box !max-w-none`}>
+
+                    <h3 className="font-bold text-2xl text-center text-red-600">Edit your Added Service</h3>
+
+                    <form method="dialog" className={`${theme ? 'text-black bg-base-100 ' : 'text-black bg-[#0B192C]'}`}>
                         {/* if there is a button in form, it will close the modal */}
                         <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
                     </form>

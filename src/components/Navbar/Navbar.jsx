@@ -54,7 +54,7 @@ const Navbar = () => {
                             </div>
                             <ul
                                 tabIndex={0}
-                                className="menu menu-sm dropdown-content bg-base-100 rounded-box mt-3 p-2 shadow z-50">
+                                className="menu menu-sm dropdown-content text-black bg-base-100 rounded-box mt-3 p-2 shadow z-50">
                                 <li><button onClick={handleLogout}>Logout</button></li>
                             </ul>
                         </div>
@@ -63,7 +63,7 @@ const Navbar = () => {
               
 
     return (
-        <div className={`sticky top-0 z-10 py-2  shadow-sm ${theme ? 'text-black bg-white' : 'text-white bg-[#10151c]'}`}>
+        <div className={`sticky top-0 z-10 py-5  shadow-sm ${theme ? 'text-black bg-white' : 'text-white bg-[#10151c]'}`}>
             <div className=" w-11/12 mx-auto">
                 <div className="navbar ">
                     <div className="navbar-start flex-1">

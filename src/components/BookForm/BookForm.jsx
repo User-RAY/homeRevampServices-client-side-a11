@@ -4,12 +4,15 @@ import { useContext, useState } from 'react';
 import Select from 'react-select'
 import Swal from 'sweetalert2';
 import AuthContext from '../../context-providers/Auth/AuthContext';
+import ThemeContext from '../../context-providers/Theme/ThemeContext';
 
 const BookForm = ({card}) => {
 
     const [selectedOptions, setSelectedOptions] = useState([]);
     
     const {user} = useContext(AuthContext)
+
+    const {theme} = useContext(ThemeContext);
 
     const options = card?.serviceArea?.map(area => ({ value: area, label: area.split('_').map(word => word[0].toUpperCase()+word.slice(1)).join(' ')}),);
 
@@ -61,57 +64,57 @@ const BookForm = ({card}) => {
     }
 
     return (
-        <div>
+        <div className={`${theme ? 'text-black bg-base-100 ' : 'text-black bg-[#0B192C]'} `}>
 
-            <div className="card bg-base-100 lg:w-3/4 mx-auto">
-            <form className="card-body p-0" onSubmit={handleBook}>
+            <div className={`card lg:w-3/4 mx-auto `}>
+            <form className={`card-body p-0 `} onSubmit={handleBook}>
                 
 
                 <div className="form-control">
                 <label className="label">
-                    <span className="label-text">Service ID</span>
+                    <span className={`label-text ${theme ? 'text-black' : 'text-white'}`}>Service ID</span>
                 </label>
                 <input type="text" name='serviceID' defaultValue={card._id} className="input input-bordered" readOnly />
                 </div>
 
                 <div className="form-control">
                 <label className="label">
-                    <span className="label-text">Service Name</span>
+                    <span className={`label-text ${theme ? 'text-black' : 'text-white'}`}>Service Name</span>
                 </label>
                 <input type="text" name='serviceName' defaultValue={card.serviceName} className="input input-bordered" readOnly />
                 </div>
 
                 <div className="form-control">
                 <label className="label">
-                    <span className="label-text">Service Image</span>
+                    <span className={`label-text ${theme ? 'text-black' : 'text-white'}`}>Service Image</span>
                 </label>
                 <input type="url" name='serviceImage' defaultValue={card.serviceImage} className="input input-bordered" readOnly />
                 </div>
 
                 <div className="form-control">
                 <label className="label">
-                    <span className="label-text">Provider Email</span>
+                    <span className={`label-text ${theme ? 'text-black' : 'text-white'}`}>Provider Email</span>
                 </label>
                 <input type="email" name='providerEmail' defaultValue={card.providerEmail} className="input input-bordered" readOnly />
                 </div>
 
                 <div className="form-control">
                 <label className="label">
-                    <span className="label-text">Provider Name</span>
+                    <span className={`label-text ${theme ? 'text-black' : 'text-white'}`}>Provider Name</span>
                 </label>
                 <input type="text" name='providerName' defaultValue={card.providerName} className="input input-bordered" readOnly />
                 </div>
 
                 <div className="form-control">
                 <label className="label">
-                    <span className="label-text">Current User Email</span>
+                    <span className={`label-text ${theme ? 'text-black' : 'text-white'}`}>Current User Email</span>
                 </label>
                 <input type="email" name='userEmail' defaultValue={user.email} className="input input-bordered" readOnly />
                 </div>
 
                 <div className="form-control">
                 <label className="label">
-                    <span className="label-text">Current User Name</span>
+                    <span className={`label-text ${theme ? 'text-black' : 'text-white'}`}>Current User Name</span>
                 </label>
                 <input type="text" name='userName' defaultValue={user.displayName} className="input input-bordered" readOnly />
                 </div>
@@ -119,7 +122,7 @@ const BookForm = ({card}) => {
 
                 <div className="form-control">
                 <label className="label">
-                    <span className="label-text text-blue-600">Service Taking Date</span>
+                    <span className="label-text text-blue-600" >Service Taking Date</span>
                 </label>
                 <input type="date" name='bookDate' className="input input-bordered" required />
                 </div>
@@ -138,7 +141,7 @@ const BookForm = ({card}) => {
 
                 <div className="form-control">
                 <label className="label">
-                    <span className="label-text">Price</span>
+                    <span className={`label-text ${theme ? 'text-black' : 'text-white'}`}>Price</span>
                 </label>
                 <input type="text" name='price' defaultValue={card.price} className="input input-bordered" readOnly />
                 </div>

@@ -1,10 +1,11 @@
 import axios from 'axios';
 import PropTypes from 'prop-types';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { NavLink, useParams } from 'react-router-dom';
 
 import Select from 'react-select'
 import Swal from 'sweetalert2';
+import ThemeContext from '../../context-providers/Theme/ThemeContext';
 
 
 
@@ -15,7 +16,7 @@ const UpdateForm = () => {
 
         const {id} = useParams();
 
-    
+        const {theme} = useContext(ThemeContext);
         
         const [selectedOptions, setSelectedOptions] = useState([]);
 
@@ -98,21 +99,26 @@ const UpdateForm = () => {
     return (
         <div className='mb-24'>
 
-            <div className="card bg-base-100 w-4/5 lg:w-3/4 mx-auto">
+                <h1 className='text-5xl my-12 font-bold text-center'>Edit Your Service</h1>
+
+            <div className={`card p-6 ${theme ? 'text-black bg-base-100 ' : 'text-black bg-[#0B192C]'}  w-4/5 lg:w-3/4 mx-auto `}>
+
+
+
                 <form className="card-body p-0" onSubmit={handleUpdate}>
                     
                 {/* <input type="text" name='id' value={selectedCard?._id || ''} readOnly className="input input-bordered" required/> */}
 
                     <div className="form-control">
                     <label className="label">
-                        <span className="label-text">Service Name</span>
+                        <span className={`label-text ${theme ? 'text-black' : 'text-white'}`}>Service Name</span>
                     </label>
                     <input type="text" name='serviceName'   className="input input-bordered" required/>
                     </div>
 
                     <div className="form-control">
                     <label className="label">
-                        <span className="label-text">Service Image</span>
+                        <span className={`label-text ${theme ? 'text-black' : 'text-white'}`}>Service Image</span>
                     </label>
                     <input type="url" name='serviceImage'  className="input input-bordered" required/>
                     </div>
@@ -120,7 +126,7 @@ const UpdateForm = () => {
 
                     <div className="form-control">
                     <label className="label">
-                        <span className="label-text">Description</span>
+                        <span className={`label-text ${theme ? 'text-black' : 'text-white'}`}>Description</span>
                     </label>
                     <input type="text" name='description'   className="input input-bordered" required/>
                     </div>
@@ -128,7 +134,7 @@ const UpdateForm = () => {
 
                     <div className="form-control">
                     <label className="label">
-                        <span className="label-text">Service Area</span>
+                        <span className={`label-text ${theme ? 'text-black' : 'text-white'}`}>Service Area</span>
                     </label>
 
                     <Select options={options} name='area' isMulti value={selectedOptions} onChange={handleSelect} required />
@@ -137,7 +143,7 @@ const UpdateForm = () => {
 
                     <div className="form-control">
                     <label className="label">
-                        <span className="label-text">Price</span>
+                        <span className={`label-text ${theme ? 'text-black' : 'text-white'}`}>Price</span>
                     </label>
                     <input type="number" name='price' className="input input-bordered" required/>
                     </div>

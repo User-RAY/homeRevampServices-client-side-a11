@@ -11,7 +11,7 @@ const Footer = () => {
     return (
         <div>
             
-            <footer className={`footer place-items-center ${theme ? 'bg-base-300' : 'text-white bg-[#374151]'}   text-base-content p-10`}>
+            {/* <footer className={`footer place-items-center ${theme ? 'bg-base-300' : 'text-white bg-[#374151]'}   text-base-content p-10`}>
                 <nav>
                     <h6 className="footer-title">Services</h6>
                     <a className="link link-hover">Electrical Fixes</a>
@@ -32,8 +32,10 @@ const Footer = () => {
                     <a className="link link-hover">Privacy policy</a>
                     <a className="link link-hover">Cookie policy</a>
                 </nav>
-                </footer>
-                <footer className={`footer place-items-center ${theme ? 'bg-base-300' : 'text-white bg-[#374151]'} text-base-content border-base-300 border-t px-10 py-4`}>
+                </footer> */}
+
+
+            <footer className={`footer place-items-center ${theme ? 'bg-base-300' : 'text-white bg-[#374151]'} text-base-content border-base-300 border-t px-10 py-14`}>
                 <aside className="grid-flow-col items-center">
                     <GiGearHammer className="text-4xl" />
 

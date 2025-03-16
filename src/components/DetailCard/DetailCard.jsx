@@ -1,10 +1,14 @@
 import PropTypes from "prop-types";
 import BookForm from "../BookForm/BookForm";
+import { useContext } from 'react';
+import ThemeContext from '../../context-providers/Theme/ThemeContext';
 
 
 const DetailCard = ({card = {}, book = false}) => {
 
     window.scrollTo(0, 0);
+
+    const {theme} = useContext(ThemeContext);
     
     return (
         <div className="w-11/12 mx-auto">
@@ -53,8 +57,8 @@ const DetailCard = ({card = {}, book = false}) => {
                         {/* Open the modal using document.getElementById('ID').showModal() method */}
 
                         <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle ">
-                            <div className="modal-box !max-w-none">
-                                <h3 className="font-bold text-2xl text-center">Confirm Your Service Booking (Input Service Date & Area)</h3>
+                            <div className={`modal-box !max-w-none ${theme ? 'text-black bg-base-100 ' : 'text-black bg-[#0B192C]'}`}>
+                                <h3 className={`font-bold text-2xl text-center ${theme ? 'text-black' : 'text-white'}`}>Confirm Your Service Booking (Input Service Date & Area)</h3>
                                 <form method="dialog">
                                     {/* if there is a button in form, it will close the modal */}
                                     <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
@@ -66,7 +70,7 @@ const DetailCard = ({card = {}, book = false}) => {
 
             :
                 <>
-                    <h1 className="text-5xl text-center font-bold">Booking Details</h1>
+                    <h1 className="text-5xl text-center font-bold mt-10">Booking Details</h1>
                     
                     <div className="my-12 grid grid-cols-1 lg:grid-cols-2 items-center">
                         <img src={card.serviceImage} alt="" className='object-cover h-48 md:h-96 w-full rounded-2xl justify-self-center lg:justify-self-start' />

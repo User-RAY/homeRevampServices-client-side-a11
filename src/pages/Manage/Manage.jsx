@@ -69,7 +69,7 @@ const Manage = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 lg:place-items-center items-stretch">
 
             {
-                 load ? <div className="text-center col-span-full"><span className="loading loading-bars loading-lg"></span></div> : CardData.map((card) => <Cards key={card._id} man={true} card={card} handleDelete={handleDelete}></Cards>)
+                 load ? <div className="text-center col-span-full"><span className="loading loading-bars loading-lg"></span></div> : (CardData.length > 0) ? CardData.map((card) => <Cards key={card._id} man={true} card={card} handleDelete={handleDelete}></Cards>) : <h1 className="text-4xl text-center font-bold col-span-full">No Service Added</h1>
             }
             </div>
         </div>

@@ -47,7 +47,7 @@ const Booked = () => {
 
 
                 {
-                     load ? <div className="text-center col-span-full"><span className="loading loading-bars loading-lg"></span></div> : (CardData.length > 0) ? CardData.map((card) => <Cards key={card._id} card={card} book={true}></Cards>) : <h1 className='text-5xl font-bold text-center my-16 col-span-3'>YOU HAVE NOT BOOKED ANY SERVICES</h1>
+                     load ? <div className="text-center col-span-full"><span className="loading loading-bars loading-lg"></span></div> : (CardData.length > 0) ? CardData.map((card) => <Cards key={card._id} card={card} book={true}></Cards>) : <h1 className='text-4xl font-bold text-center my-16 col-span-3'>You Have Not Booked Any Services</h1>
                 }
                 
                 

@@ -72,7 +72,7 @@ const AddServices = () => {
 
             <h1 className='text-5xl font-bold text-center'>Add Your Service</h1>
 
-             <div className={`card ${theme ? 'text-black' : 'text-black bg-[#0B192C]'} bg-base-100 w-4/5 lg:w-3/4 mx-auto p-6 mt-6`}>
+             <div className={`card ${theme ? 'text-black bg-base-100 ' : 'text-black bg-[#0B192C]'} w-4/5 lg:w-3/4 mx-auto p-6 mt-6`}>
             <form className="card-body p-0" onSubmit={handleAdd}>
                 
 
