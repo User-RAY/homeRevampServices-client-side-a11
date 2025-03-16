@@ -8,7 +8,7 @@ import ThemeContext from "../../context-providers/Theme/ThemeContext";
 const Navbar = () => {
 
     const {user, signout, loading} = useContext(AuthContext);
-    const {toggleMode} = useContext(ThemeContext);
+    const { theme ,toggleMode} = useContext(ThemeContext);
 
     const handleLogout = () => {
         signout()
@@ -63,54 +63,49 @@ const Navbar = () => {
               
 
     return (
-        <div className="mb-6 w-11/12 mx-auto">
-
-            <div className="navbar shadow-sm">
-                <div className="navbar-start flex-1">
-                    <div className="dropdown">
-                    <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-                        <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-5 w-5"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M4 6h16M4 12h8m-8 6h16" />
-                        </svg>
+        <div className={`sticky top-0 z-10 py-2  shadow-sm ${theme ? 'text-black bg-white' : 'text-white bg-[#10151c]'}`}>
+            <div className=" w-11/12 mx-auto">
+                <div className="navbar ">
+                    <div className="navbar-start flex-1">
+                        <div className="dropdown">
+                        <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+                            <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="h-5 w-5"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth="2"
+                                d="M4 6h16M4 12h8m-8 6h16" />
+                            </svg>
+                        </div>
+                        <ul
+                            tabIndex={0}
+                            className="menu menu-sm dropdown-content bg-gray-400 rounded-box z-[50] mt-3 w-52 p-2 shadow">
+                             {
+                                loading ? <span className="loading loading-bars loading-md text-blue-500"></span> : user ? links2 : links1
+                             }
+                            <input type="checkbox"  onClick={toggleMode} className="toggle theme-controller" />
+                        </ul>
+                        </div>
+                        <NavLink to='/' className="btn btn-ghost text-xl"><GiGearHammer className="text-3xl" /> <h1 className="hidden md:inline">HomeRevamp</h1></NavLink>
                     </div>
-                    <ul
-                        tabIndex={0}
-                        className="menu menu-sm dropdown-content bg-gray-400 rounded-box z-[50] mt-3 w-52 p-2 shadow">
-                         {
-                            loading ? <span className="loading loading-bars loading-md text-blue-500"></span> : user ? links2 : links1
-                         }   
-                        <input type="checkbox"  onClick={toggleMode} className="toggle theme-controller" />
-                    </ul>
+                    <div className="navbar-end hidden lg:flex">
+                    <input type="checkbox"  onClick={toggleMode} className="toggle theme-controller" />
+                        <ul className="menu menu-horizontal px-1">
+                        {
+                                loading ? <span className="loading loading-bars loading-md text-blue-500"></span> : user ? links2 : links1
+                        }
+                        </ul>
                     </div>
-                    <NavLink to='/' className="btn btn-ghost text-xl"><GiGearHammer className="text-3xl" /> <h1 className="hidden md:inline">HomeRevamp</h1></NavLink>
-                </div>
-                <div className="navbar-end hidden lg:flex">
-                <input type="checkbox"  onClick={toggleMode} className="toggle theme-controller" />
-                    <ul className="menu menu-horizontal px-1">
                     {
-                            loading ? <span className="loading loading-bars loading-md text-blue-500"></span> : user ? links2 : links1
-                    } 
-                    </ul>
+                        loading ? <span className="loading loading-bars loading-md text-blue-500"></span> : user ? Profile : null
+                    }
                 </div>
-                {
-                    loading ? <span className="loading loading-bars loading-md text-blue-500"></span> : user ? Profile : null
-                } 
             </div>
-
-
-
-
-
-
         </div>
     );
 };

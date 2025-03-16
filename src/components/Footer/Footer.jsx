@@ -1,12 +1,17 @@
+import { useContext } from "react";
 import { GiGearHammer } from "react-icons/gi";
+import ThemeContext from "../../context-providers/Theme/ThemeContext";
 
 
 
 const Footer = () => {
+
+    const {theme} = useContext(ThemeContext);
+
     return (
         <div>
             
-            <footer className="footer bg-base-300 text-base-content p-10">
+            <footer className={`footer place-items-center ${theme ? 'bg-base-300' : 'text-white bg-[#374151]'}   text-base-content p-10`}>
                 <nav>
                     <h6 className="footer-title">Services</h6>
                     <a className="link link-hover">Electrical Fixes</a>
@@ -28,7 +33,7 @@ const Footer = () => {
                     <a className="link link-hover">Cookie policy</a>
                 </nav>
                 </footer>
-                <footer className="footer bg-base-300 text-base-content border-base-300 border-t px-10 py-4">
+                <footer className={`footer place-items-center ${theme ? 'bg-base-300' : 'text-white bg-[#374151]'} text-base-content border-base-300 border-t px-10 py-4`}>
                 <aside className="grid-flow-col items-center">
                     <GiGearHammer className="text-4xl" />
 
@@ -41,7 +46,7 @@ const Footer = () => {
                 
                 <p className="place-self-center">Copyright © {new Date().getFullYear()} - All right reserved by HomeRevamp Ltd</p>
 
-                <nav className="md:place-self-center md:justify-self-end">
+                <nav className="md:place-self-center md:justify-self-center">
                     <div className="grid grid-flow-col gap-4">
                     <a href="https://x.com/" target="_blank">
                         <svg

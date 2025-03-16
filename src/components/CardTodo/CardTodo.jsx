@@ -1,13 +1,17 @@
 import axios from 'axios';
 import PropTypes from 'prop-types';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import Select from 'react-select'
 import Swal from 'sweetalert2';
+import ThemeContext from '../../context-providers/Theme/ThemeContext';
+
 
 const CardTodo = ({card = {}}) => {
 
 
      const [selectedOptions, setSelectedOptions] = useState({})
+
+     const {theme} = useContext(ThemeContext);
 
      const options = [
         { value: 'pending', label: 'Pending' },
@@ -74,7 +78,25 @@ const CardTodo = ({card = {}}) => {
                 <form onSubmit={handleStatus}>
                     <div className="card-actions grid grid-cols-1 md:grid-cols-3 items-center">
                        <div className='flex items-center justify-end col-span-2 mt-6 md:mt-0'>
-                           <p className='mr-2 flex-grow-0'>Status:</p> <Select className='w-36' options={options} value={selectedOptions} onChange={handleSelect} required  />
+                           <p className='mr-2 flex-grow-0'>Status:</p> <Select className='w-36' options={options} value={selectedOptions} onChange={handleSelect} styles={{
+    control: (provided) => ({
+      ...provided,
+      backgroundColor: theme ? 'transparent' : '#182d49', 
+      color: theme ? 'black' : 'black', 
+    }), singleValue: (provided) => ({
+        ...provided,
+        color: theme ? 'black' : 'white', 
+      }),    menu: (provided) => ({
+        ...provided,
+        backgroundColor: theme ? 'white' : '#182d49', 
+        color: theme ? 'black' : 'white',
+      }),    option: (provided, state) => ({
+        ...provided,
+        backgroundColor: state.isFocused ? (theme ? '#f0f0f0' : '#304a71') : (theme ? 'white' : '#182d49'), 
+        color: state.isFocused ? (theme ? 'black' : 'white') : (theme ? 'black' : 'white'), 
+        cursor: 'pointer', 
+      }),
+  }} required  />
                        </div>
                         <button className='btn btn-primary w-1/2 mt-6 md:w-auto md:mt-0'>Update Status</button>
                     </div>

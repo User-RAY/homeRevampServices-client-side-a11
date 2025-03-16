@@ -11,9 +11,7 @@ const MainLayout = () => {
         <div>
             <HelmetProvider>
             <div className={`${theme ? 'text-black' : 'text-white bg-gradient-to-b from-black via-gray-900 to-gray-800'}`}>
-                <div className="pb-8">
 
-                </div>
                 <Navbar></Navbar>
                 <div className="min-h-[80vh]">
                     <Outlet></Outlet>
